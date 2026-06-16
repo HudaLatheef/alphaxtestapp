@@ -1,7 +1,8 @@
+import 'package:alphaxtestapp/core/failures/Errors/failures.dart';
+import 'package:alphaxtestapp/core/failures/auth/value_objects.dart';
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:senfin_online_portal/core/failures/Errors/failures.dart';
-import 'package:senfin_online_portal/core/failures/auth/value_objects.dart';
+
 
 Either<ValueFailure<String>, String> validateMaxStringLength(
   String input,

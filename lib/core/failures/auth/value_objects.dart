@@ -1,7 +1,8 @@
+import 'package:alphaxtestapp/core/failures/Errors/failures.dart';
+import 'package:alphaxtestapp/core/failures/Errors/value_objects.dart';
+import 'package:alphaxtestapp/core/failures/Errors/value_validators.dart';
 import 'package:dartz/dartz.dart';
-import 'package:senfin_online_portal/core/failures/Errors/failures.dart';
-import 'package:senfin_online_portal/core/failures/Errors/value_objects.dart';
-import 'package:senfin_online_portal/core/failures/Errors/value_validators.dart';
+
 
 class Username extends ValueObject<String> {
   @override

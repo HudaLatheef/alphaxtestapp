@@ -1,4 +1,5 @@
-import 'package:senfin_online_portal/core/failures/Errors/failures.dart';
+
+import 'package:alphaxtestapp/core/failures/Errors/failures.dart';
 
 class NotAuthenticatedError extends Error {}
 

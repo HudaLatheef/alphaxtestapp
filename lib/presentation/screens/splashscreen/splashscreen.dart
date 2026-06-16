@@ -1,3 +1,5 @@
+import 'package:alphaxtestapp/presentation/screens/loginscreen/loginscreen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:async';
@@ -15,8 +17,12 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(const Duration(seconds: 3), () {
-      // Navigate to Login Screen
-      // context.go('/login');
+      Navigator.of(context, rootNavigator: true).push(
+        CupertinoPageRoute<bool>(
+          //fullscreenDialog: true,
+          builder: (BuildContext context) => LoginScreen(),
+        ),
+      );
     });
   }
 
