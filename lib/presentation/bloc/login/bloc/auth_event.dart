@@ -7,6 +7,6 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.loginwithusernameandpw() = Loginwithusernameandpw;
   const factory AuthEvent.setcountvalue() = Setcountvalue;
   const factory AuthEvent.returncount() = Returncount;
-   const factory AuthEvent.oncompleteOTP(otpalue) = OncompleteOTP;
-   const factory AuthEvent.oneditingotp(otpalue) = OneditingOTP;
+  const factory AuthEvent.oncompleteOTP(otpalue) = OncompleteOTP;
+  const factory AuthEvent.oneditingotp(otpalue) = OneditingOTP;
 }

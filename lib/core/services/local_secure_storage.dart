@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:alphaxtestapp/data/models/login_response/login_response.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:encrypt/encrypt.dart' as encrypt;
 
@@ -67,4 +70,24 @@ class CredentialManager {
       onCredentialsSaved();
     } else {}
   }
+}
+
+Future<void> saveUser(LoginResponse user) async {
+  const storage = FlutterSecureStorage();
+
+  String jsonString = jsonEncode(user.toJson());
+
+  await storage.write(key: "user_data", value: jsonString);
+}
+
+Future<LoginResponse?> getUser() async {
+  const storage = FlutterSecureStorage();
+
+  String? jsonString = await storage.read(key: "user_data");
+
+  if (jsonString == null) return null;
+
+  Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+
+  return LoginResponse.fromJson(jsonMap);
 }

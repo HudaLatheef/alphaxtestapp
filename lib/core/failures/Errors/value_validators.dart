@@ -184,9 +184,7 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
 }
 
 Either<ValueFailure<String>, String> validatePassword(String input) {
-  if (input.length >= 6 &&
-      
-      input.contains(RegExp(r'[a-zA-Z]'))) {
+  if (input.length >= 6 && input.contains(RegExp(r'[a-zA-Z]'))) {
     Password.savepassword = input;
     return right(input);
   } else {

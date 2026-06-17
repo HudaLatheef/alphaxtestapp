@@ -11,29 +11,25 @@ Route? routes(RouteSettings settings) {
         return SplashScreen();
       },
     );
-  }
-   else if (settings.name == 'Loginscreen') {
+  } else if (settings.name == 'Loginscreen') {
     return MaterialPageRoute(
       builder: (context) {
-       return LoginScreen();
+        return LoginScreen();
+      },
+    );
+  } else if (settings.name == 'Homepage') {
+    return MaterialPageRoute(
+      builder: (context) {
+        return Homepage();
+      },
+    );
+  } else if (settings.name == 'ProfileSummary') {
+    return MaterialPageRoute(
+      builder: (context) {
+        return ProfileSummary();
       },
     );
   }
-  else if (settings.name == 'Homepage') {
-    return MaterialPageRoute(
-      builder: (context) {
-       return Homepage();
-      },
-    );
-  }
-  else if (settings.name == 'ProfileSummary') {
-    return MaterialPageRoute(
-      builder: (context) {
-       return ProfileSummary();
-      },
-    );
-  }
-  
 
   return null;
 }

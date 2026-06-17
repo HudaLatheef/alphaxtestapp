@@ -6,7 +6,6 @@ part 'login_response.g.dart';
 @freezed
 class LoginResponse with _$LoginResponse {
   factory LoginResponse({
-   
     int? id,
     String? username,
     String? email,

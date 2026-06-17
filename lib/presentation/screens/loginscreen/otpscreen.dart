@@ -19,7 +19,9 @@ class Otpdialog {
       context: context,
       builder: (context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.r),
+          ),
           content: Alertcontent(context),
         );
       },
@@ -75,7 +77,10 @@ class _AlertcontentState extends State<Alertcontent> {
                           children: [
                             IconButton(
                               onPressed: () {
-                                Navigator.of(context, rootNavigator: true).pop('dialog');
+                                Navigator.of(
+                                  context,
+                                  rootNavigator: true,
+                                ).pop('dialog');
                               },
                               icon: Icon(Icons.close, color: Colors.red),
                             ),
@@ -88,13 +93,19 @@ class _AlertcontentState extends State<Alertcontent> {
                   Text(
                     "OTP confirmation",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 16.sp, color: const Color(0xff172B4D)),
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      color: const Color(0xff172B4D),
+                    ),
                   ),
                   SizedBox(height: 20.h),
                   Text(
                     "We have sent an OTP code. Please enter below",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 12.sp, color: const Color(0xff7A869A)),
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      color: const Color(0xff7A869A),
+                    ),
                   ),
                 ],
               ),
@@ -112,18 +123,25 @@ class _AlertcontentState extends State<Alertcontent> {
                         keyboardType: const TextInputType.numberWithOptions(),
                         controller: otpController,
                         decoration: UnderlineDecoration(
-                          textStyle: const TextStyle(fontSize: 20, color: Colors.black),
+                          textStyle: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                          ),
                           colorBuilder: const FixedColorBuilder(Colors.green),
                         ),
                         onCodeSubmitted: (code) {
-                          BlocProvider.of<AuthBloc>(context).add(AuthEvent.oncompleteOTP(code));
+                          BlocProvider.of<AuthBloc>(
+                            context,
+                          ).add(AuthEvent.oncompleteOTP(code));
                           if (code.length == 6) {
                             FocusScope.of(context).unfocus();
                           }
                         },
                         currentCode: state.codeOTP,
                         onCodeChanged: (code) {
-                          BlocProvider.of<AuthBloc>(context).add(AuthEvent.oneditingotp(code));
+                          BlocProvider.of<AuthBloc>(
+                            context,
+                          ).add(AuthEvent.oneditingotp(code));
                           if (code!.length == 6) {
                             FocusScope.of(context).requestFocus(FocusNode());
                           }
@@ -138,7 +156,10 @@ class _AlertcontentState extends State<Alertcontent> {
                             : state.codeOTP!.length == 6
                             ? Text(
                                 'Your code: ${state.codeOTP}',
-                                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               )
                             : const Text('Please enter OTP'),
                       ),
@@ -153,7 +174,8 @@ class _AlertcontentState extends State<Alertcontent> {
                         "Your code expires in ${state.count.toString()} seconds",
                         style: TextStyle(fontSize: 12.sp, color: Colors.grey),
                       ),
-                    state.codeOTP.toString() == "000000" && state.codeOTP!.length == 6
+                    state.codeOTP.toString() == "000000" &&
+                            state.codeOTP!.length == 6
                         ? Padding(
                             padding: EdgeInsets.only(top: 10.h),
                             child: const Text('Entered OTP is incorrect'),
@@ -177,19 +199,34 @@ class _AlertcontentState extends State<Alertcontent> {
                           sharedPrefs.connectstatus == "true"
                               ? {
                                   // Navigator.of(context, rootNavigator: true).pop('dialog');
-                                  if (state.count.toString() == "0") {Countdown().startCountDown(context)},
+                                  if (state.count.toString() == "0")
+                                    {Countdown().startCountDown(context)},
                                 }
                               : null;
                         },
                         style: ButtonStyle(
-                          backgroundColor: const WidgetStatePropertyAll(Colors.grey),
-                          side: WidgetStateProperty.all(const BorderSide(color: Colors.transparent, width: 1)),
+                          backgroundColor: const WidgetStatePropertyAll(
+                            Colors.grey,
+                          ),
+                          side: WidgetStateProperty.all(
+                            const BorderSide(
+                              color: Colors.transparent,
+                              width: 1,
+                            ),
+                          ),
                         ),
                         child: state.isloadingresentotp == true
-                            ? const SpinKitThreeBounce(color: Colors.grey, size: 20)
+                            ? const SpinKitThreeBounce(
+                                color: Colors.grey,
+                                size: 20,
+                              )
                             : Text(
                                 "RESEND OTP",
-                                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12.sp, color: Colors.white),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12.sp,
+                                  color: Colors.white,
+                                ),
                               ),
                       ),
                     ),
@@ -201,14 +238,21 @@ class _AlertcontentState extends State<Alertcontent> {
                             onPressed: () async {
                               sharedPrefs.connectstatus == "true"
                                   ? {
-                                      if (state.codeOTP!.length == 6 && state.codeOTP.toString() != "000000")
+                                      if (state.codeOTP!.length == 6 &&
+                                          state.codeOTP.toString() != "000000")
                                         {
-                                                  Navigator.of(context).pop(),
-                                          Navigator.of(context, rootNavigator: true).push(
+                                          Navigator.of(context).pop(),
+                                          Navigator.of(
+                                            context,
+                                            rootNavigator: true,
+                                          ).push(
                                             CupertinoPageRoute<bool>(
                                               //fullscreenDialog: true,
-                                              settings: const RouteSettings(name: "Homepage"),
-                                              builder: (BuildContext context) => Homepage(),
+                                              settings: const RouteSettings(
+                                                name: "Homepage",
+                                              ),
+                                              builder: (BuildContext context) =>
+                                                  Homepage(),
                                             ),
                                           ),
                                         }
@@ -218,14 +262,28 @@ class _AlertcontentState extends State<Alertcontent> {
                                   : null;
                             },
                             style: ButtonStyle(
-                              backgroundColor: WidgetStatePropertyAll(Colors.grey),
-                              side: WidgetStateProperty.all(const BorderSide(color: Colors.transparent, width: 1)),
+                              backgroundColor: WidgetStatePropertyAll(
+                                Colors.grey,
+                              ),
+                              side: WidgetStateProperty.all(
+                                const BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                              ),
                             ),
                             child: state.isacceptotploading == true
-                                ? const SpinKitThreeBounce(color: Colors.white, size: 20)
+                                ? const SpinKitThreeBounce(
+                                    color: Colors.white,
+                                    size: 20,
+                                  )
                                 : Text(
                                     "SUBMIT",
-                                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 12.sp, color: Colors.white),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12.sp,
+                                      color: Colors.white,
+                                    ),
                                   ),
                           ),
                         );

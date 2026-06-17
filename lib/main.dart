@@ -4,6 +4,7 @@ import 'package:alphaxtestapp/core/services/connectivityinfo.dart';
 import 'package:alphaxtestapp/core/util/colors.dart';
 import 'package:alphaxtestapp/core/util/routes.dart';
 import 'package:alphaxtestapp/presentation/bloc/login/bloc/auth_bloc.dart';
+import 'package:alphaxtestapp/presentation/bloc/profile/bloc/profile_bloc.dart';
 import 'package:alphaxtestapp/presentation/screens/splashscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,6 +21,7 @@ Future<void> main() async {
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (ctxauth) => getIt<AuthBloc>()),
+        BlocProvider(create: (ctxprofile) => getIt<ProfileBloc>()),
 
         // BlocProvider(
         //   create: (ctxauth) =>

@@ -12,4 +12,5 @@ class URLConstants {
   static String baseURL = "https://dummyjson.com";
 
   static String login = "$baseURL/auth/login";
+  static String getprofiledata = "$baseURL/auth/me";
 }

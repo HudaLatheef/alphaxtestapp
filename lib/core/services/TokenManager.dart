@@ -21,7 +21,8 @@ class TokenManager implements itoken {
 
   @override
   Future<String> getaccessToken() async {
-    final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
     String accesstoken = sharedPreferences.getString('accesstoken').toString();
     // print("${token}- token from get string shared preference");
     return accesstoken;

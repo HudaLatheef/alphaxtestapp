@@ -137,7 +137,7 @@ class Password extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory Password(String input) {
-    return Password._(validatePassword(input),);
+    return Password._(validatePassword(input));
   }
 
   const Password._(this.value);
@@ -148,7 +148,7 @@ class Passwordretype extends ValueObject<String> {
   final Either<ValueFailure<String>, String> value;
 
   factory Passwordretype(String input) {
-    return Passwordretype._(validatePasswordretype(input),);
+    return Passwordretype._(validatePasswordretype(input));
   }
 
   const Passwordretype._(this.value);
