@@ -1,4 +1,6 @@
 import 'package:alphaxtestapp/core/util/colors.dart';
+import 'package:alphaxtestapp/presentation/screens/profilescreen/profilepage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -99,7 +101,16 @@ class Homepage extends StatelessWidget {
                                 ),
                               ),
         
-                              Icon(Icons.chevron_right, color: Colors.grey, size: 26.sp),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context, rootNavigator: true).push(
+                                            CupertinoPageRoute<bool>(
+                                              //fullscreenDialog: true,
+                                              settings: const RouteSettings(name: "ProfileSummary"),
+                                              builder: (BuildContext context) => ProfileSummary(),
+                                   ) );
+                                },
+                                child: Icon(Icons.chevron_right, color: Colors.grey, size: 26.sp)),
                             ],
                           ),
                         ],
