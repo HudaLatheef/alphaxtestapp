@@ -88,5 +88,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<OneditingOTP>((event, emit) {
       emit(state.copyWith(codeOTP: event.otpalue));
     });
+    on<Clearbloc>(
+      (event, emit) {
+        emit(AuthState.initial());
+      },
+    );
   }
 }

@@ -91,3 +91,14 @@ Future<LoginResponse?> getUser() async {
 
   return LoginResponse.fromJson(jsonMap);
 }
+Future<void> deleteUser() async {
+  const storage = FlutterSecureStorage();
+
+  await storage.delete(key: "user_data");
+}
+
+Future<void> clearAll() async {
+  const storage = FlutterSecureStorage();
+
+  await storage.deleteAll();
+}

@@ -11,7 +11,7 @@ Route? routes(RouteSettings settings) {
         return SplashScreen();
       },
     );
-  } else if (settings.name == 'Loginscreen') {
+  } else if (settings.name == 'LoginScreen') {
     return MaterialPageRoute(
       builder: (context) {
         return LoginScreen();

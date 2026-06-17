@@ -21,15 +21,7 @@ class LoginScreen extends StatelessWidget {
           child: Scaffold(
             body: Container(
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF0F2027),
-                    Color(0xFF203A43),
-                    Color(0xFF2C5364),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
+                gradient: LinearGradient(colors: [Color(0xFF0F2027), Color(0xFF203A43), Color(0xFF2C5364)], begin: Alignment.topLeft, end: Alignment.bottomRight),
               ),
               child: Center(
                 child: SingleChildScrollView(
@@ -48,46 +40,27 @@ class LoginScreen extends StatelessWidget {
                         // Icon
                         Container(
                           padding: EdgeInsets.all(14.w),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFF00C853).withOpacity(0.15),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.lock_outline,
-                            color: const Color(0xFF00C853),
-                            size: 34.sp,
-                          ),
+                          decoration: BoxDecoration(color: const Color(0xFF00C853).withOpacity(0.15), shape: BoxShape.circle),
+                          child: Icon(Icons.lock_outline, color: const Color(0xFF00C853), size: 34.sp),
                         ),
                         SizedBox(height: 20.h),
                         Text(
                           "ALPHAX",
-                          style: TextStyle(
-                            fontSize: 28.sp,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 2,
-                            color: const Color(0xFF00C853),
-                          ),
+                          style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold, letterSpacing: 2, color: const Color(0xFF00C853)),
                         ),
 
                         SizedBox(height: 15.h),
 
                         Text(
                           "Welcome Back",
-                          style: TextStyle(
-                            fontSize: 22.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                          style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold, color: Colors.white),
                         ),
 
                         SizedBox(height: 5.h),
 
                         Text(
                           "Login to continue",
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            color: Colors.white70,
-                          ),
+                          style: TextStyle(fontSize: 14.sp, color: Colors.white70),
                         ),
 
                         SizedBox(height: 25.h),
@@ -96,48 +69,22 @@ class LoginScreen extends StatelessWidget {
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {
                             return TextFormField(
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14.sp,
-                              ),
+                              style: TextStyle(color: Colors.white, fontSize: 14.sp),
                               autocorrect: false,
                               textInputAction: TextInputAction.next,
                               onTapOutside: (event) {
-                                FocusScope.of(
-                                  context,
-                                ).requestFocus(FocusNode());
+                                FocusScope.of(context).requestFocus(FocusNode());
                               },
-                              onChanged: (value) => context
-                                  .read<AuthBloc>()
-                                  .add(AuthEvent.usernameChanged(value)),
-                              validator: (_) =>
-                                  state.username!.value.fold<String?>(
-                                    (f) => f.maybeMap<String?>(
-                                      empty: (_) => 'Username Required',
-                                      orElse: () => null,
-                                    ),
-                                    (_) => null,
-                                  ),
-                              autovalidateMode: state.showErrorMessages == true
-                                  ? AutovalidateMode.always
-                                  : AutovalidateMode.disabled,
+                              onChanged: (value) => context.read<AuthBloc>().add(AuthEvent.usernameChanged(value)),
+                              validator: (_) => state.username!.value.fold<String?>((f) => f.maybeMap<String?>(empty: (_) => 'Username Required', orElse: () => null), (_) => null),
+                              autovalidateMode: state.showErrorMessages == true ? AutovalidateMode.always : AutovalidateMode.disabled,
                               decoration: InputDecoration(
                                 labelText: "Username",
-                                labelStyle: TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 13.sp,
-                                ),
-                                prefixIcon: Icon(
-                                  Icons.person,
-                                  color: Colors.white70,
-                                  size: 20.sp,
-                                ),
+                                labelStyle: TextStyle(color: Colors.white70, fontSize: 13.sp),
+                                prefixIcon: Icon(Icons.person, color: Colors.white70, size: 20.sp),
                                 filled: true,
                                 fillColor: Colors.white.withOpacity(0.08),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  borderSide: BorderSide.none,
-                                ),
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r), borderSide: BorderSide.none),
                               ),
                             );
                           },
@@ -153,47 +100,19 @@ class LoginScreen extends StatelessWidget {
                               textInputAction: TextInputAction.done,
                               obscureText: true,
                               onTapOutside: (event) {
-                                FocusScope.of(
-                                  context,
-                                ).requestFocus(FocusNode());
+                                FocusScope.of(context).requestFocus(FocusNode());
                               },
-                              onChanged: (value) => context
-                                  .read<AuthBloc>()
-                                  .add(AuthEvent.passwordchanged(value)),
-                              validator: (_) =>
-                                  state.password!.value.fold<String?>(
-                                    (f) => f.maybeMap<String?>(
-                                      empty: (_) => 'Password Required',
-                                      shortPassword: (_) =>
-                                          'Password must be atleast 6 characters',
-                                      orElse: () => null,
-                                    ),
-                                    (_) => null,
-                                  ),
-                              autovalidateMode: state.showErrorMessages == true
-                                  ? AutovalidateMode.always
-                                  : AutovalidateMode.disabled,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14.sp,
-                              ),
+                              onChanged: (value) => context.read<AuthBloc>().add(AuthEvent.passwordchanged(value)),
+                              validator: (_) => state.password!.value.fold<String?>((f) => f.maybeMap<String?>(empty: (_) => 'Password Required', shortPassword: (_) => 'Password must be atleast 6 characters', orElse: () => null), (_) => null),
+                              autovalidateMode: state.showErrorMessages == true ? AutovalidateMode.always : AutovalidateMode.disabled,
+                              style: TextStyle(color: Colors.white, fontSize: 14.sp),
                               decoration: InputDecoration(
                                 labelText: "Password",
-                                labelStyle: TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 13.sp,
-                                ),
-                                prefixIcon: Icon(
-                                  Icons.lock,
-                                  color: Colors.white70,
-                                  size: 20.sp,
-                                ),
+                                labelStyle: TextStyle(color: Colors.white70, fontSize: 13.sp),
+                                prefixIcon: Icon(Icons.lock, color: Colors.white70, size: 20.sp),
                                 filled: true,
                                 fillColor: Colors.white.withOpacity(0.08),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(12.r),
-                                  borderSide: BorderSide.none,
-                                ),
+                                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r), borderSide: BorderSide.none),
                               ),
                             );
                           },
@@ -203,15 +122,10 @@ class LoginScreen extends StatelessWidget {
 
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {
-                            return state.isloginsuccess == false &&
-                                    state.isSubmitting == false &&
-                                    state.authFailureOrSuccessOption!.isSome()
+                            return state.isloginsuccess == false && state.isSubmitting == false && state.authFailureOrSuccessOption!.isSome()
                                 ? Text(
                                     "Invalid Credential",
-                                    style: TextStyle(
-                                      color: Colors.red,
-                                      fontSize: 15.sp,
-                                    ),
+                                    style: TextStyle(color: Colors.red, fontSize: 15.sp),
                                   )
                                 : SizedBox();
                           },
@@ -224,11 +138,7 @@ class LoginScreen extends StatelessWidget {
                             onPressed: () {},
                             child: Text(
                               "Forgot Password?",
-                              style: TextStyle(
-                                color: const Color(0xFF00C853),
-                                fontWeight: FontWeight.w600,
-                                fontSize: 13.sp,
-                              ),
+                              style: TextStyle(color: const Color(0xFF00C853), fontWeight: FontWeight.w600, fontSize: 13.sp),
                             ),
                           ),
                         ),
@@ -244,25 +154,16 @@ class LoginScreen extends StatelessWidget {
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0xFF00C853),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12.r),
-                                  ),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.r)),
                                 ),
                                 onPressed: () {
-                                  BlocProvider.of<AuthBloc>(context).add(
-                                    const AuthEvent.loginwithusernameandpw(),
-                                  );
+                                  BlocProvider.of<AuthBloc>(context).add(const AuthEvent.loginwithusernameandpw());
                                 },
                                 child: state.isSubmitting == true
-                                    ? CircularProgressIndicator(
-                                        color: Colors.white,
-                                      )
+                                    ? CircularProgressIndicator(color: Colors.white)
                                     : Text(
                                         "Login",
-                                        style: TextStyle(
-                                          fontSize: 16.sp,
-                                          fontWeight: FontWeight.w600,
-                                        ),
+                                        style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
                                       ),
                               ),
                             );
@@ -277,20 +178,13 @@ class LoginScreen extends StatelessWidget {
                           children: [
                             Text(
                               "Don't have an account? ",
-                              style: TextStyle(
-                                color: Colors.white70,
-                                fontSize: 13.sp,
-                              ),
+                              style: TextStyle(color: Colors.white70, fontSize: 13.sp),
                             ),
                             GestureDetector(
                               onTap: () {},
                               child: Text(
                                 "Sign Up",
-                                style: TextStyle(
-                                  color: const Color(0xFF00C853),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13.sp,
-                                ),
+                                style: TextStyle(color: const Color(0xFF00C853), fontWeight: FontWeight.bold, fontSize: 13.sp),
                               ),
                             ),
                           ],

@@ -9,4 +9,5 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.returncount() = Returncount;
   const factory AuthEvent.oncompleteOTP(otpalue) = OncompleteOTP;
   const factory AuthEvent.oneditingotp(otpalue) = OneditingOTP;
+   const factory AuthEvent.clearbloc() = Clearbloc;
 }

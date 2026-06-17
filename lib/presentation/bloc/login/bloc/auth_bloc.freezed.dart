@@ -26,6 +26,7 @@ mixin _$AuthEvent {
     required TResult Function() returncount,
     required TResult Function(dynamic otpalue) oncompleteOTP,
     required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
@@ -36,6 +37,7 @@ mixin _$AuthEvent {
     TResult? Function()? returncount,
     TResult? Function(dynamic otpalue)? oncompleteOTP,
     TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
@@ -46,6 +48,7 @@ mixin _$AuthEvent {
     TResult Function()? returncount,
     TResult Function(dynamic otpalue)? oncompleteOTP,
     TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +61,7 @@ mixin _$AuthEvent {
     required TResult Function(Returncount value) returncount,
     required TResult Function(OncompleteOTP value) oncompleteOTP,
     required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
@@ -68,6 +72,7 @@ mixin _$AuthEvent {
     TResult? Function(Returncount value)? returncount,
     TResult? Function(OncompleteOTP value)? oncompleteOTP,
     TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
@@ -78,6 +83,7 @@ mixin _$AuthEvent {
     TResult Function(Returncount value)? returncount,
     TResult Function(OncompleteOTP value)? oncompleteOTP,
     TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -185,6 +191,7 @@ class _$UsernameChangedImpl implements UsernameChanged {
     required TResult Function() returncount,
     required TResult Function(dynamic otpalue) oncompleteOTP,
     required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
   }) {
     return usernameChanged(usernameStr);
   }
@@ -199,6 +206,7 @@ class _$UsernameChangedImpl implements UsernameChanged {
     TResult? Function()? returncount,
     TResult? Function(dynamic otpalue)? oncompleteOTP,
     TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
   }) {
     return usernameChanged?.call(usernameStr);
   }
@@ -213,6 +221,7 @@ class _$UsernameChangedImpl implements UsernameChanged {
     TResult Function()? returncount,
     TResult Function(dynamic otpalue)? oncompleteOTP,
     TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -232,6 +241,7 @@ class _$UsernameChangedImpl implements UsernameChanged {
     required TResult Function(Returncount value) returncount,
     required TResult Function(OncompleteOTP value) oncompleteOTP,
     required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
   }) {
     return usernameChanged(this);
   }
@@ -246,6 +256,7 @@ class _$UsernameChangedImpl implements UsernameChanged {
     TResult? Function(Returncount value)? returncount,
     TResult? Function(OncompleteOTP value)? oncompleteOTP,
     TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) {
     return usernameChanged?.call(this);
   }
@@ -260,6 +271,7 @@ class _$UsernameChangedImpl implements UsernameChanged {
     TResult Function(Returncount value)? returncount,
     TResult Function(OncompleteOTP value)? oncompleteOTP,
     TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) {
     if (usernameChanged != null) {
@@ -365,6 +377,7 @@ class _$PasswordchangedImpl implements Passwordchanged {
     required TResult Function() returncount,
     required TResult Function(dynamic otpalue) oncompleteOTP,
     required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
   }) {
     return passwordchanged(passwordStr);
   }
@@ -379,6 +392,7 @@ class _$PasswordchangedImpl implements Passwordchanged {
     TResult? Function()? returncount,
     TResult? Function(dynamic otpalue)? oncompleteOTP,
     TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
   }) {
     return passwordchanged?.call(passwordStr);
   }
@@ -393,6 +407,7 @@ class _$PasswordchangedImpl implements Passwordchanged {
     TResult Function()? returncount,
     TResult Function(dynamic otpalue)? oncompleteOTP,
     TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) {
     if (passwordchanged != null) {
@@ -412,6 +427,7 @@ class _$PasswordchangedImpl implements Passwordchanged {
     required TResult Function(Returncount value) returncount,
     required TResult Function(OncompleteOTP value) oncompleteOTP,
     required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
   }) {
     return passwordchanged(this);
   }
@@ -426,6 +442,7 @@ class _$PasswordchangedImpl implements Passwordchanged {
     TResult? Function(Returncount value)? returncount,
     TResult? Function(OncompleteOTP value)? oncompleteOTP,
     TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) {
     return passwordchanged?.call(this);
   }
@@ -440,6 +457,7 @@ class _$PasswordchangedImpl implements Passwordchanged {
     TResult Function(Returncount value)? returncount,
     TResult Function(OncompleteOTP value)? oncompleteOTP,
     TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) {
     if (passwordchanged != null) {
@@ -513,6 +531,7 @@ class _$LoginwithusernameandpwImpl implements Loginwithusernameandpw {
     required TResult Function() returncount,
     required TResult Function(dynamic otpalue) oncompleteOTP,
     required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
   }) {
     return loginwithusernameandpw();
   }
@@ -527,6 +546,7 @@ class _$LoginwithusernameandpwImpl implements Loginwithusernameandpw {
     TResult? Function()? returncount,
     TResult? Function(dynamic otpalue)? oncompleteOTP,
     TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
   }) {
     return loginwithusernameandpw?.call();
   }
@@ -541,6 +561,7 @@ class _$LoginwithusernameandpwImpl implements Loginwithusernameandpw {
     TResult Function()? returncount,
     TResult Function(dynamic otpalue)? oncompleteOTP,
     TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) {
     if (loginwithusernameandpw != null) {
@@ -560,6 +581,7 @@ class _$LoginwithusernameandpwImpl implements Loginwithusernameandpw {
     required TResult Function(Returncount value) returncount,
     required TResult Function(OncompleteOTP value) oncompleteOTP,
     required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
   }) {
     return loginwithusernameandpw(this);
   }
@@ -574,6 +596,7 @@ class _$LoginwithusernameandpwImpl implements Loginwithusernameandpw {
     TResult? Function(Returncount value)? returncount,
     TResult? Function(OncompleteOTP value)? oncompleteOTP,
     TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) {
     return loginwithusernameandpw?.call(this);
   }
@@ -588,6 +611,7 @@ class _$LoginwithusernameandpwImpl implements Loginwithusernameandpw {
     TResult Function(Returncount value)? returncount,
     TResult Function(OncompleteOTP value)? oncompleteOTP,
     TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) {
     if (loginwithusernameandpw != null) {
@@ -651,6 +675,7 @@ class _$SetcountvalueImpl implements Setcountvalue {
     required TResult Function() returncount,
     required TResult Function(dynamic otpalue) oncompleteOTP,
     required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
   }) {
     return setcountvalue();
   }
@@ -665,6 +690,7 @@ class _$SetcountvalueImpl implements Setcountvalue {
     TResult? Function()? returncount,
     TResult? Function(dynamic otpalue)? oncompleteOTP,
     TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
   }) {
     return setcountvalue?.call();
   }
@@ -679,6 +705,7 @@ class _$SetcountvalueImpl implements Setcountvalue {
     TResult Function()? returncount,
     TResult Function(dynamic otpalue)? oncompleteOTP,
     TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) {
     if (setcountvalue != null) {
@@ -698,6 +725,7 @@ class _$SetcountvalueImpl implements Setcountvalue {
     required TResult Function(Returncount value) returncount,
     required TResult Function(OncompleteOTP value) oncompleteOTP,
     required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
   }) {
     return setcountvalue(this);
   }
@@ -712,6 +740,7 @@ class _$SetcountvalueImpl implements Setcountvalue {
     TResult? Function(Returncount value)? returncount,
     TResult? Function(OncompleteOTP value)? oncompleteOTP,
     TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) {
     return setcountvalue?.call(this);
   }
@@ -726,6 +755,7 @@ class _$SetcountvalueImpl implements Setcountvalue {
     TResult Function(Returncount value)? returncount,
     TResult Function(OncompleteOTP value)? oncompleteOTP,
     TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) {
     if (setcountvalue != null) {
@@ -789,6 +819,7 @@ class _$ReturncountImpl implements Returncount {
     required TResult Function() returncount,
     required TResult Function(dynamic otpalue) oncompleteOTP,
     required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
   }) {
     return returncount();
   }
@@ -803,6 +834,7 @@ class _$ReturncountImpl implements Returncount {
     TResult? Function()? returncount,
     TResult? Function(dynamic otpalue)? oncompleteOTP,
     TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
   }) {
     return returncount?.call();
   }
@@ -817,6 +849,7 @@ class _$ReturncountImpl implements Returncount {
     TResult Function()? returncount,
     TResult Function(dynamic otpalue)? oncompleteOTP,
     TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) {
     if (returncount != null) {
@@ -836,6 +869,7 @@ class _$ReturncountImpl implements Returncount {
     required TResult Function(Returncount value) returncount,
     required TResult Function(OncompleteOTP value) oncompleteOTP,
     required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
   }) {
     return returncount(this);
   }
@@ -850,6 +884,7 @@ class _$ReturncountImpl implements Returncount {
     TResult? Function(Returncount value)? returncount,
     TResult? Function(OncompleteOTP value)? oncompleteOTP,
     TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) {
     return returncount?.call(this);
   }
@@ -864,6 +899,7 @@ class _$ReturncountImpl implements Returncount {
     TResult Function(Returncount value)? returncount,
     TResult Function(OncompleteOTP value)? oncompleteOTP,
     TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) {
     if (returncount != null) {
@@ -950,6 +986,7 @@ class _$OncompleteOTPImpl implements OncompleteOTP {
     required TResult Function() returncount,
     required TResult Function(dynamic otpalue) oncompleteOTP,
     required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
   }) {
     return oncompleteOTP(otpalue);
   }
@@ -964,6 +1001,7 @@ class _$OncompleteOTPImpl implements OncompleteOTP {
     TResult? Function()? returncount,
     TResult? Function(dynamic otpalue)? oncompleteOTP,
     TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
   }) {
     return oncompleteOTP?.call(otpalue);
   }
@@ -978,6 +1016,7 @@ class _$OncompleteOTPImpl implements OncompleteOTP {
     TResult Function()? returncount,
     TResult Function(dynamic otpalue)? oncompleteOTP,
     TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) {
     if (oncompleteOTP != null) {
@@ -997,6 +1036,7 @@ class _$OncompleteOTPImpl implements OncompleteOTP {
     required TResult Function(Returncount value) returncount,
     required TResult Function(OncompleteOTP value) oncompleteOTP,
     required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
   }) {
     return oncompleteOTP(this);
   }
@@ -1011,6 +1051,7 @@ class _$OncompleteOTPImpl implements OncompleteOTP {
     TResult? Function(Returncount value)? returncount,
     TResult? Function(OncompleteOTP value)? oncompleteOTP,
     TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) {
     return oncompleteOTP?.call(this);
   }
@@ -1025,6 +1066,7 @@ class _$OncompleteOTPImpl implements OncompleteOTP {
     TResult Function(Returncount value)? returncount,
     TResult Function(OncompleteOTP value)? oncompleteOTP,
     TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) {
     if (oncompleteOTP != null) {
@@ -1119,6 +1161,7 @@ class _$OneditingOTPImpl implements OneditingOTP {
     required TResult Function() returncount,
     required TResult Function(dynamic otpalue) oncompleteOTP,
     required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
   }) {
     return oneditingotp(otpalue);
   }
@@ -1133,6 +1176,7 @@ class _$OneditingOTPImpl implements OneditingOTP {
     TResult? Function()? returncount,
     TResult? Function(dynamic otpalue)? oncompleteOTP,
     TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
   }) {
     return oneditingotp?.call(otpalue);
   }
@@ -1147,6 +1191,7 @@ class _$OneditingOTPImpl implements OneditingOTP {
     TResult Function()? returncount,
     TResult Function(dynamic otpalue)? oncompleteOTP,
     TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) {
     if (oneditingotp != null) {
@@ -1166,6 +1211,7 @@ class _$OneditingOTPImpl implements OneditingOTP {
     required TResult Function(Returncount value) returncount,
     required TResult Function(OncompleteOTP value) oncompleteOTP,
     required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
   }) {
     return oneditingotp(this);
   }
@@ -1180,6 +1226,7 @@ class _$OneditingOTPImpl implements OneditingOTP {
     TResult? Function(Returncount value)? returncount,
     TResult? Function(OncompleteOTP value)? oncompleteOTP,
     TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) {
     return oneditingotp?.call(this);
   }
@@ -1194,6 +1241,7 @@ class _$OneditingOTPImpl implements OneditingOTP {
     TResult Function(Returncount value)? returncount,
     TResult Function(OncompleteOTP value)? oncompleteOTP,
     TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) {
     if (oneditingotp != null) {
@@ -1213,6 +1261,150 @@ abstract class OneditingOTP implements AuthEvent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OneditingOTPImplCopyWith<_$OneditingOTPImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ClearblocImplCopyWith<$Res> {
+  factory _$$ClearblocImplCopyWith(
+    _$ClearblocImpl value,
+    $Res Function(_$ClearblocImpl) then,
+  ) = __$$ClearblocImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ClearblocImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ClearblocImpl>
+    implements _$$ClearblocImplCopyWith<$Res> {
+  __$$ClearblocImplCopyWithImpl(
+    _$ClearblocImpl _value,
+    $Res Function(_$ClearblocImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ClearblocImpl implements Clearbloc {
+  const _$ClearblocImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.clearbloc()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClearblocImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(dynamic usernameStr) usernameChanged,
+    required TResult Function(dynamic passwordStr) passwordchanged,
+    required TResult Function() loginwithusernameandpw,
+    required TResult Function() setcountvalue,
+    required TResult Function() returncount,
+    required TResult Function(dynamic otpalue) oncompleteOTP,
+    required TResult Function(dynamic otpalue) oneditingotp,
+    required TResult Function() clearbloc,
+  }) {
+    return clearbloc();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(dynamic usernameStr)? usernameChanged,
+    TResult? Function(dynamic passwordStr)? passwordchanged,
+    TResult? Function()? loginwithusernameandpw,
+    TResult? Function()? setcountvalue,
+    TResult? Function()? returncount,
+    TResult? Function(dynamic otpalue)? oncompleteOTP,
+    TResult? Function(dynamic otpalue)? oneditingotp,
+    TResult? Function()? clearbloc,
+  }) {
+    return clearbloc?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(dynamic usernameStr)? usernameChanged,
+    TResult Function(dynamic passwordStr)? passwordchanged,
+    TResult Function()? loginwithusernameandpw,
+    TResult Function()? setcountvalue,
+    TResult Function()? returncount,
+    TResult Function(dynamic otpalue)? oncompleteOTP,
+    TResult Function(dynamic otpalue)? oneditingotp,
+    TResult Function()? clearbloc,
+    required TResult orElse(),
+  }) {
+    if (clearbloc != null) {
+      return clearbloc();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UsernameChanged value) usernameChanged,
+    required TResult Function(Passwordchanged value) passwordchanged,
+    required TResult Function(Loginwithusernameandpw value)
+    loginwithusernameandpw,
+    required TResult Function(Setcountvalue value) setcountvalue,
+    required TResult Function(Returncount value) returncount,
+    required TResult Function(OncompleteOTP value) oncompleteOTP,
+    required TResult Function(OneditingOTP value) oneditingotp,
+    required TResult Function(Clearbloc value) clearbloc,
+  }) {
+    return clearbloc(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UsernameChanged value)? usernameChanged,
+    TResult? Function(Passwordchanged value)? passwordchanged,
+    TResult? Function(Loginwithusernameandpw value)? loginwithusernameandpw,
+    TResult? Function(Setcountvalue value)? setcountvalue,
+    TResult? Function(Returncount value)? returncount,
+    TResult? Function(OncompleteOTP value)? oncompleteOTP,
+    TResult? Function(OneditingOTP value)? oneditingotp,
+    TResult? Function(Clearbloc value)? clearbloc,
+  }) {
+    return clearbloc?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UsernameChanged value)? usernameChanged,
+    TResult Function(Passwordchanged value)? passwordchanged,
+    TResult Function(Loginwithusernameandpw value)? loginwithusernameandpw,
+    TResult Function(Setcountvalue value)? setcountvalue,
+    TResult Function(Returncount value)? returncount,
+    TResult Function(OncompleteOTP value)? oncompleteOTP,
+    TResult Function(OneditingOTP value)? oneditingotp,
+    TResult Function(Clearbloc value)? clearbloc,
+    required TResult orElse(),
+  }) {
+    if (clearbloc != null) {
+      return clearbloc(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Clearbloc implements AuthEvent {
+  const factory Clearbloc() = _$ClearblocImpl;
 }
 
 /// @nodoc

@@ -33,4 +33,11 @@ class TokenManager implements itoken {
     SharedPreferences pref = await SharedPreferences.getInstance();
     pref.remove('accesstoken');
   }
+  
+}
+
+Future<void> logout() async {
+  final prefs = await SharedPreferences.getInstance();
+
+  await prefs.clear();
 }

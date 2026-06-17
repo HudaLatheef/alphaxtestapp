@@ -20,27 +20,33 @@ mixin _$ProfileEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getprofiledata,
+    required TResult Function() clearbloc,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getprofiledata,
+    TResult? Function()? clearbloc,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getprofiledata,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Ongetprofiledata value) getprofiledata,
+    required TResult Function(Clearbloc value) clearbloc,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Ongetprofiledata value)? getprofiledata,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Ongetprofiledata value)? getprofiledata,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -111,6 +117,7 @@ class _$OngetprofiledataImpl implements Ongetprofiledata {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getprofiledata,
+    required TResult Function() clearbloc,
   }) {
     return getprofiledata();
   }
@@ -119,6 +126,7 @@ class _$OngetprofiledataImpl implements Ongetprofiledata {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getprofiledata,
+    TResult? Function()? clearbloc,
   }) {
     return getprofiledata?.call();
   }
@@ -127,6 +135,7 @@ class _$OngetprofiledataImpl implements Ongetprofiledata {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getprofiledata,
+    TResult Function()? clearbloc,
     required TResult orElse(),
   }) {
     if (getprofiledata != null) {
@@ -139,6 +148,7 @@ class _$OngetprofiledataImpl implements Ongetprofiledata {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Ongetprofiledata value) getprofiledata,
+    required TResult Function(Clearbloc value) clearbloc,
   }) {
     return getprofiledata(this);
   }
@@ -147,6 +157,7 @@ class _$OngetprofiledataImpl implements Ongetprofiledata {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Ongetprofiledata value)? getprofiledata,
+    TResult? Function(Clearbloc value)? clearbloc,
   }) {
     return getprofiledata?.call(this);
   }
@@ -155,6 +166,7 @@ class _$OngetprofiledataImpl implements Ongetprofiledata {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Ongetprofiledata value)? getprofiledata,
+    TResult Function(Clearbloc value)? clearbloc,
     required TResult orElse(),
   }) {
     if (getprofiledata != null) {
@@ -166,6 +178,113 @@ class _$OngetprofiledataImpl implements Ongetprofiledata {
 
 abstract class Ongetprofiledata implements ProfileEvent {
   const factory Ongetprofiledata() = _$OngetprofiledataImpl;
+}
+
+/// @nodoc
+abstract class _$$ClearblocImplCopyWith<$Res> {
+  factory _$$ClearblocImplCopyWith(
+    _$ClearblocImpl value,
+    $Res Function(_$ClearblocImpl) then,
+  ) = __$$ClearblocImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ClearblocImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$ClearblocImpl>
+    implements _$$ClearblocImplCopyWith<$Res> {
+  __$$ClearblocImplCopyWithImpl(
+    _$ClearblocImpl _value,
+    $Res Function(_$ClearblocImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of ProfileEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ClearblocImpl implements Clearbloc {
+  const _$ClearblocImpl();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.clearbloc()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClearblocImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getprofiledata,
+    required TResult Function() clearbloc,
+  }) {
+    return clearbloc();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getprofiledata,
+    TResult? Function()? clearbloc,
+  }) {
+    return clearbloc?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getprofiledata,
+    TResult Function()? clearbloc,
+    required TResult orElse(),
+  }) {
+    if (clearbloc != null) {
+      return clearbloc();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Ongetprofiledata value) getprofiledata,
+    required TResult Function(Clearbloc value) clearbloc,
+  }) {
+    return clearbloc(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Ongetprofiledata value)? getprofiledata,
+    TResult? Function(Clearbloc value)? clearbloc,
+  }) {
+    return clearbloc?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Ongetprofiledata value)? getprofiledata,
+    TResult Function(Clearbloc value)? clearbloc,
+    required TResult orElse(),
+  }) {
+    if (clearbloc != null) {
+      return clearbloc(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Clearbloc implements ProfileEvent {
+  const factory Clearbloc() = _$ClearblocImpl;
 }
 
 /// @nodoc

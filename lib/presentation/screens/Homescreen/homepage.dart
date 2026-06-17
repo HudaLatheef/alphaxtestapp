@@ -4,6 +4,7 @@ import 'package:alphaxtestapp/core/util/colors.dart';
 import 'package:alphaxtestapp/data/models/login_response/login_response.dart';
 import 'package:alphaxtestapp/presentation/bloc/profile/bloc/profile_bloc.dart';
 import 'package:alphaxtestapp/presentation/screens/profilescreen/profilepage.dart';
+import 'package:alphaxtestapp/widgets/Appexitdialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -59,151 +60,159 @@ class Homepage extends StatelessWidget {
               children: [
                 // Header
                 Expanded(
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.all(20.w),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Hello, ${user.firstName} 👋",
-                          style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold, color: Colors.white),
-                        ),
-
-                        SizedBox(height: 8.h),
-
-                        Text(
-                          "Welcome back to your account",
-                          style: TextStyle(color: Colors.grey.shade200, fontSize: 14.sp),
-                        ),
-
-                        SizedBox(height: 24.h),
-
-                        // Profile Summary
-                        Container(
-                          padding: EdgeInsets.all(16.w),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(18.r),
-                            boxShadow: [BoxShadow(color: Colors.black.withOpacity(.05), blurRadius: 12, offset: const Offset(0, 4))],
+                  child: RefreshIndicator(
+                    onRefresh: () async {
+    
+  },
+                    child: SingleChildScrollView(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      padding: EdgeInsets.all(20.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Hello, ${user.firstName} 👋",
+                            style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold, color: Colors.white),
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Profile Summary",
-                                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
-                              ),
-
-                              SizedBox(height: 16.h),
-
-                              Row(
-                                children: [
-                                  CircleAvatar(radius: 28.r, backgroundImage: NetworkImage(user.image ?? "https://i.pravatar.cc/150")),
-
-                                  SizedBox(width: 14.w),
-
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          user.firstName ?? '',
-                                          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
-                                        ),
-                                        SizedBox(height: 4.h),
-                                        Text(
-                                          user.username ?? '',
-                                          style: TextStyle(color: Colors.grey, fontSize: 13.sp),
-                                        ),
-                                        SizedBox(height: 4.h),
-                                        Text(
-                                          user.email ?? '',
-                                          style: TextStyle(color: Colors.grey, fontSize: 13.sp),
-                                        ),
-                                      ],
+                    
+                          SizedBox(height: 8.h),
+                    
+                          Text(
+                            "Welcome back to your account",
+                            style: TextStyle(color: Colors.grey.shade200, fontSize: 14.sp),
+                          ),
+                    
+                          SizedBox(height: 24.h),
+                    
+                          // Profile Summary
+                          Container(
+                            padding: EdgeInsets.all(16.w),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(18.r),
+                              boxShadow: [BoxShadow(color: Colors.black.withOpacity(.05), blurRadius: 12, offset: const Offset(0, 4))],
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Profile Summary",
+                                  style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
+                                ),
+                    
+                                SizedBox(height: 16.h),
+                    
+                                Row(
+                                  children: [
+                                    CircleAvatar(radius: 28.r, backgroundImage: NetworkImage(user.image ?? "https://i.pravatar.cc/150")),
+                    
+                                    SizedBox(width: 14.w),
+                    
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            user.firstName ?? '',
+                                            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
+                                          ),
+                                          SizedBox(height: 4.h),
+                                          Text(
+                                            user.username ?? '',
+                                            style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                                          ),
+                                          SizedBox(height: 4.h),
+                                          Text(
+                                            user.email ?? '',
+                                            style: TextStyle(color: Colors.grey, fontSize: 13.sp),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-
-                                  InkWell(
-                                    onTap: () {
-                                       BlocProvider.of<ProfileBloc>(context).add(const ProfileEvent.getprofiledata());
-                                      Navigator.of(context, rootNavigator: true).push(
-                                        CupertinoPageRoute<bool>(
-                                          //fullscreenDialog: true,
-                                          settings: const RouteSettings(name: "ProfileSummary"),
-                                          builder: (BuildContext context) => ProfileSummary(),
-                                        ),
-                                      );
-                                    },
-                                    child: Icon(Icons.chevron_right, color: Colors.grey, size: 26.sp),
-                                  ),
-                                ],
+                    
+                                    InkWell(
+                                      onTap: () {
+                                         BlocProvider.of<ProfileBloc>(context).add(const ProfileEvent.getprofiledata());
+                                        Navigator.of(context, rootNavigator: true).push(
+                                          CupertinoPageRoute<bool>(
+                                            //fullscreenDialog: true,
+                                            settings: const RouteSettings(name: "ProfileSummary"),
+                                            builder: (BuildContext context) => ProfileSummary(),
+                                          ),
+                                        );
+                                      },
+                                      child: Icon(Icons.chevron_right, color: Colors.grey, size: 26.sp),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                    
+                          SizedBox(height: 20.h),
+                    
+                          Row(
+                            children: [
+                              Expanded(
+                                child: _InfoCard(icon: Icons.person_outline, title: "User ID", value: user.id.toString()),
+                              ),
+                              SizedBox(width: 14.w),
+                              Expanded(
+                                child: _InfoCard(icon: Icons.shield_outlined, title: "Role", value: "User"),
                               ),
                             ],
                           ),
-                        ),
-
-                        SizedBox(height: 20.h),
-
-                        Row(
-                          children: [
-                            Expanded(
-                              child: _InfoCard(icon: Icons.person_outline, title: "User ID", value: user.id.toString()),
-                            ),
-                            SizedBox(width: 14.w),
-                            Expanded(
-                              child: _InfoCard(icon: Icons.shield_outlined, title: "Role", value: "User"),
-                            ),
-                          ],
-                        ),
-
-                        SizedBox(height: 24.h),
-
-                        SizedBox(
-                          width: double.infinity,
-                          height: 55.h,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: ConstantColors.primaryGreen,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.r)),
-                            ),
-                            onPressed: () {
-                                  BlocProvider.of<ProfileBloc>(context).add(const ProfileEvent.getprofiledata());
-                              Navigator.of(context, rootNavigator: true).push(
-                                CupertinoPageRoute<bool>(
-                                  //fullscreenDialog: true,
-                                  settings: const RouteSettings(name: "ProfileSummary"),
-                                  builder: (BuildContext context) => ProfileSummary(),
-                                ),
-                              );
-                            },
-                            child: Text(
-                              "View Profile",
-                              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
+                    
+                          SizedBox(height: 24.h),
+                    
+                          SizedBox(
+                            width: double.infinity,
+                            height: 55.h,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: ConstantColors.primaryGreen,
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.r)),
+                              ),
+                              onPressed: () {
+                                    BlocProvider.of<ProfileBloc>(context).add(const ProfileEvent.getprofiledata());
+                                Navigator.of(context, rootNavigator: true).push(
+                                  CupertinoPageRoute<bool>(
+                                    //fullscreenDialog: true,
+                                    settings: const RouteSettings(name: "ProfileSummary"),
+                                    builder: (BuildContext context) => ProfileSummary(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                "View Profile",
+                                style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600),
+                              ),
                             ),
                           ),
-                        ),
-
-                        SizedBox(height: 16.h),
-
-                        SizedBox(
-                          width: double.infinity,
-                          height: 55.h,
-                          child: OutlinedButton.icon(
-                            onPressed: () {},
-                            icon: const Icon(Icons.logout, color: Colors.red),
-                            label: Text(
-                              "Logout",
-                              style: TextStyle(color: Colors.red, fontSize: 16.sp, fontWeight: FontWeight.w600),
-                            ),
-                            style: OutlinedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              side: BorderSide(color: Colors.grey.shade200),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.r)),
+                    
+                          SizedBox(height: 16.h),
+                    
+                          SizedBox(
+                            width: double.infinity,
+                            height: 55.h,
+                            child: OutlinedButton.icon(
+                              onPressed: () {
+                                return AppExitDialog().showAlertDialog(context);
+                              },
+                              icon: const Icon(Icons.logout, color: Colors.red),
+                              label: Text(
+                                "Logout",
+                                style: TextStyle(color: Colors.red, fontSize: 16.sp, fontWeight: FontWeight.w600),
+                              ),
+                              style: OutlinedButton.styleFrom(
+                                backgroundColor: Colors.white,
+                                side: BorderSide(color: Colors.grey.shade200),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14.r)),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
