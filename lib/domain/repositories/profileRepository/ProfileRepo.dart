@@ -10,6 +10,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+
 @LazySingleton(as: IProfileFacade)
 @Injectable(as: ProfileBloc)
 class ProfileFacade implements IProfileFacade {
