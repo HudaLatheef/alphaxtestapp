@@ -30,9 +30,9 @@ class LoginScreen extends StatelessWidget {
                     width: 1.sw, // responsive full width limit
                     padding: EdgeInsets.all(22.w),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.08),
+                      color: Colors.white.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(20.r),
-                      border: Border.all(color: Colors.white.withOpacity(0.15)),
+                      border: Border.all(color: Colors.white.withValues(alpha: 0.15)),
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -40,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                         // Icon
                         Container(
                           padding: EdgeInsets.all(14.w),
-                          decoration: BoxDecoration(color: const Color(0xFF00C853).withOpacity(0.15), shape: BoxShape.circle),
+                          decoration: BoxDecoration(color: const Color(0xFF00C853).withValues(alpha: 0.15), shape: BoxShape.circle),
                           child: Icon(Icons.lock_outline, color: const Color(0xFF00C853), size: 34.sp),
                         ),
                         SizedBox(height: 20.h),
@@ -69,8 +69,11 @@ class LoginScreen extends StatelessWidget {
                         BlocBuilder<AuthBloc, AuthState>(
                           builder: (context, state) {
                             return TextFormField(
+                              readOnly: false,
+                           keyboardType:TextInputType.emailAddress,
                               style: TextStyle(color: Colors.white, fontSize: 14.sp),
                               autocorrect: false,
+                              obscureText: false,
                               textInputAction: TextInputAction.next,
                               onTapOutside: (event) {
                                 FocusScope.of(context).requestFocus(FocusNode());
@@ -83,7 +86,7 @@ class LoginScreen extends StatelessWidget {
                                 labelStyle: TextStyle(color: Colors.white70, fontSize: 13.sp),
                                 prefixIcon: Icon(Icons.person, color: Colors.white70, size: 20.sp),
                                 filled: true,
-                                fillColor: Colors.white.withOpacity(0.08),
+                                fillColor: Colors.white.withValues(alpha: 0.08),
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r), borderSide: BorderSide.none),
                               ),
                             );
@@ -97,6 +100,7 @@ class LoginScreen extends StatelessWidget {
                           builder: (context, state) {
                             return TextFormField(
                               autocorrect: false,
+                                 readOnly: false,
                               textInputAction: TextInputAction.done,
                               obscureText: true,
                               onTapOutside: (event) {
@@ -111,7 +115,7 @@ class LoginScreen extends StatelessWidget {
                                 labelStyle: TextStyle(color: Colors.white70, fontSize: 13.sp),
                                 prefixIcon: Icon(Icons.lock, color: Colors.white70, size: 20.sp),
                                 filled: true,
-                                fillColor: Colors.white.withOpacity(0.08),
+                                fillColor: Colors.white.withValues(alpha: 0.08),
                                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r), borderSide: BorderSide.none),
                               ),
                             );

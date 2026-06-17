@@ -1,8 +1,6 @@
-import 'package:alphaxtestapp/core/failures/auth/auth_failure.dart';
 import 'package:alphaxtestapp/core/failures/main_failure.dart';
 import 'package:alphaxtestapp/core/services/TokenManager.dart';
 import 'package:alphaxtestapp/data/api/api_URL.dart';
-import 'package:alphaxtestapp/data/models/login_response/login_response.dart';
 import 'package:alphaxtestapp/data/models/profiledata/profiledata.dart';
 import 'package:alphaxtestapp/domain/repositories/profileRepository/i_profile_facade.dart';
 import 'package:alphaxtestapp/presentation/bloc/profile/bloc/profile_bloc.dart';

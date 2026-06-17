@@ -1,4 +1,3 @@
-import 'package:alphaxtestapp/core/failures/auth/auth_failure.dart';
 import 'package:alphaxtestapp/core/failures/main_failure.dart';
 import 'package:alphaxtestapp/data/models/profiledata/profiledata.dart';
 import 'package:alphaxtestapp/domain/repositories/profileRepository/i_profile_facade.dart';

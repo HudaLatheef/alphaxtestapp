@@ -23,32 +23,11 @@ Future<void> main() async {
         BlocProvider(create: (ctxauth) => getIt<AuthBloc>()),
         BlocProvider(create: (ctxprofile) => getIt<ProfileBloc>()),
 
-        // BlocProvider(
-        //   create: (ctxauth) =>
-        //       getIt<AuthBloc>()..add(const AuthEvent.appstarted()),
-        // ),
+        
       ],
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
-          // state.userfailuresorsuccessoption.fold(
-          //   () {},
-          //   (either) => either.fold(
-          //     (failure) {
-          //       failure.map(
-          //           invalidtoken: (_) => {
-          //                 BlocProvider.of<AuthBloc>(context)
-          //                     .add(const AuthEvent.setTokenExpireStatus(true)),
-          //               },
-          //           cancelledByUser: (_) => '',
-          //           serverError: (_) => 'Server Error',
-          //           invalidCredentials: (_) => "invalidcredential");
-          //     },
-          //     (_) {
-          //       BlocProvider.of<AuthBloc>(context)
-          //           .add(const AuthEvent.setTokenExpireStatus(false));
-          //     },
-          //   ),
-          // );
+       
         },
         child: const MyApp(),
       ),
@@ -62,7 +41,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(390, 844), // iPhone 13/14 size reference
+      designSize: const Size(390, 844), 
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -74,8 +53,8 @@ class MyApp extends StatelessWidget {
             useMaterial3: false,
             pageTransitionsTheme: const PageTransitionsTheme(
               builders: {
-                TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-                TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+                // TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+                // TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
               },
             ),
             textTheme: GoogleFonts.dmSansTextTheme(),

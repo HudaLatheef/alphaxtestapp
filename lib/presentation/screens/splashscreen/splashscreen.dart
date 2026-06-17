@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'dart:async';
 
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,14 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     _checkLogin();
-    // Timer(const Duration(seconds: 3), () {
-    //   Navigator.of(context, rootNavigator: true).push(
-    //     CupertinoPageRoute<bool>(
-    //       //fullscreenDialog: true,
-    //       builder: (BuildContext context) => LoginScreen(),
-    //     ),
-    //   );
-    // });
+   
   }
 
   Future<void> _checkLogin() async {
@@ -64,7 +56,7 @@ Timer(const Duration(seconds: 3), () {
               Container(
                 height: 120,
                 width: 120,
-                decoration: BoxDecoration(color: Colors.white.withOpacity(0.15), shape: BoxShape.circle),
+                decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.15), shape: BoxShape.circle),
                 child: const Icon(Icons.person, color: Colors.white, size: 70),
               ),
 
