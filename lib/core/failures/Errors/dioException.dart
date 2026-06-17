@@ -6,7 +6,7 @@ class ApiException implements Exception {
       case DioExceptionType.badResponse:
         return [
           "bad response error",
-          "check api urls or parameters are invalid"
+          "check api urls or parameters are invalid",
         ];
 
       case DioExceptionType.connectionError:
@@ -20,7 +20,7 @@ class ApiException implements Exception {
       default:
         return [
           "UnKnown Error",
-          "Check other Api Url Or Parameters are invalid"
+          "Check other Api Url Or Parameters are invalid",
         ];
     }
   }

@@ -1,6 +1,7 @@
+import 'package:alphaxtestapp/presentation/screens/Homescreen/homepage.dart';
+import 'package:alphaxtestapp/presentation/screens/loginscreen/loginscreen.dart';
 import 'package:alphaxtestapp/presentation/screens/splashscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
-
 
 Route? routes(RouteSettings settings) {
   if (settings.name == 'SplashScreen') {
@@ -10,13 +11,20 @@ Route? routes(RouteSettings settings) {
       },
     );
   }
-  //  else if (settings.name == 'Loginscreen') {
-  //   return MaterialPageRoute(
-  //     builder: (context) {
-  //      return null
-  //     },
-  //   );
-  // } 
+   else if (settings.name == 'Loginscreen') {
+    return MaterialPageRoute(
+      builder: (context) {
+       return LoginScreen();
+      },
+    );
+  }
+  else if (settings.name == 'Homepage') {
+    return MaterialPageRoute(
+      builder: (context) {
+       return Homepage();
+      },
+    );
+  }
 
   return null;
 }

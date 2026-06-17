@@ -10,7 +10,7 @@ void showCustomDialog(BuildContext ctx, String title, String description) {
         ElevatedButton(
           child: const Text('Ok'),
           onPressed: () => Navigator.of(context).pop(),
-        )
+        ),
       ],
     ),
   );

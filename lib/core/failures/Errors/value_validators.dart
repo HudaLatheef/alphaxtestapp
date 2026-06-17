@@ -3,7 +3,6 @@ import 'package:alphaxtestapp/core/failures/auth/value_objects.dart';
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
 
-
 Either<ValueFailure<String>, String> validateMaxStringLength(
   String input,
   int maxLength,
@@ -35,7 +34,9 @@ Either<ValueFailure<String>, String> validateMaxStringLengthvalue(
     } else {
       return left(
         ValueFailure.ExceedingLengthvalue(
-            failedValue: input.toString(), max: maxLength.toString()),
+          failedValue: input.toString(),
+          max: maxLength.toString(),
+        ),
       );
     }
   } else {
@@ -65,7 +66,10 @@ Either<ValueFailure<String>, String> validateMaxStringLengthvalue(
 // }
 
 Either<ValueFailure<String>, String> validateMinbal(
-    String input, String minbalance, String availbalance) {
+  String input,
+  String minbalance,
+  String availbalance,
+) {
   String input1 = input.replaceAll(",", "");
   // print("input1....${input1}");
   double input1double = double.parse(input);
@@ -86,13 +90,16 @@ Either<ValueFailure<String>, String> validateMinbal(
   } else {
     return left(
       ValueFailure.Exceedingminbalance(
-          failedValue: input.toString(), max: minbalance.toString()),
+        failedValue: input.toString(),
+        max: minbalance.toString(),
+      ),
     );
   }
 }
 
 Either<ValueFailure<String>, String> validateStringNotEmptydouble(
-    String input) {
+  String input,
+) {
   if (input.isNotEmpty) {
     return right(input.toString());
   } else {
@@ -139,7 +146,8 @@ Either<ValueFailure<String>, String> validateMinLengthValue(
   } else if (input.length < minLength) {
     // Return failure if the input is shorter than the minimum length
     return left(
-        ValueFailure.shortLength(failedValue: input, minLength: minLength));
+      ValueFailure.shortLength(failedValue: input, minLength: minLength),
+    );
   } else {
     // Input meets both conditions: it's not empty and meets the minimum length
     return right(input);
@@ -161,10 +169,7 @@ Either<ValueFailure<KtList<T>>, KtList<T>> validateMaxListLength<T>(
   if (input.size <= maxLength) {
     return right(input);
   } else {
-    return left(ValueFailure.listTooLong(
-      failedValue: input,
-      max: maxLength,
-    ));
+    return left(ValueFailure.listTooLong(failedValue: input, max: maxLength));
   }
 }
 
@@ -179,8 +184,8 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
 }
 
 Either<ValueFailure<String>, String> validatePassword(String input) {
-  if (input.length <= 8 &&
-      input.contains(RegExp(r'[0-9]')) &&
+  if (input.length >= 6 &&
+      
       input.contains(RegExp(r'[a-zA-Z]'))) {
     Password.savepassword = input;
     return right(input);

@@ -16,27 +16,23 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     @required T? failedValue,
     @required String? max,
   }) = ExceedingLengthvalue<T>;
-  const factory ValueFailure.empty({
-    @required T? failedValue,
-  }) = Empty<T>;
-  const factory ValueFailure.multiline({
-    @required T? failedValue,
-  }) = Multiline<T>;
+  const factory ValueFailure.empty({@required T? failedValue}) = Empty<T>;
+  const factory ValueFailure.multiline({@required T? failedValue}) =
+      Multiline<T>;
 
-  const factory ValueFailure.shortLength(
-      {@required T? failedValue, @required int? minLength}) = Shortlength<T>;
+  const factory ValueFailure.shortLength({
+    @required T? failedValue,
+    @required int? minLength,
+  }) = Shortlength<T>;
 
   const factory ValueFailure.listTooLong({
     @required T? failedValue,
     @required int? max,
   }) = ListTooLong<T>;
-  const factory ValueFailure.invalidEmail({
-    @required T? failedValue,
-  }) = InvalidEmail<T>;
-  const factory ValueFailure.shortPassword({
-    @required T? failedValue,
-  }) = ShortPassword<T>;
-  const factory ValueFailure.passworddoesntmatch({
-    @required T? failedValue,
-  }) = Passworddoesntmatch<T>;
+  const factory ValueFailure.invalidEmail({@required T? failedValue}) =
+      InvalidEmail<T>;
+  const factory ValueFailure.shortPassword({@required T? failedValue}) =
+      ShortPassword<T>;
+  const factory ValueFailure.passworddoesntmatch({@required T? failedValue}) =
+      Passworddoesntmatch<T>;
 }

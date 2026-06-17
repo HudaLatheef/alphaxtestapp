@@ -1,4 +1,3 @@
-
 import 'package:alphaxtestapp/core/failures/Errors/failures.dart';
 
 class NotAuthenticatedError extends Error {}

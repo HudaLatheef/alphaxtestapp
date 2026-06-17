@@ -3,7 +3,7 @@ import 'package:alphaxtestapp/core/di/injectable.dart';
 import 'package:alphaxtestapp/core/services/connectivityinfo.dart';
 import 'package:alphaxtestapp/core/util/colors.dart';
 import 'package:alphaxtestapp/core/util/routes.dart';
-import 'package:alphaxtestapp/presentation/bloc/home/bloc/auth_bloc.dart';
+import 'package:alphaxtestapp/presentation/bloc/login/bloc/auth_bloc.dart';
 import 'package:alphaxtestapp/presentation/screens/splashscreen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,12 +20,11 @@ Future<void> main() async {
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (ctxauth) => getIt<AuthBloc>()),
-       
+
         // BlocProvider(
         //   create: (ctxauth) =>
         //       getIt<AuthBloc>()..add(const AuthEvent.appstarted()),
         // ),
-       
       ],
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
@@ -49,12 +48,10 @@ Future<void> main() async {
           //   ),
           // );
         },
-        child:
-         const MyApp(),
-      )
-      
-      )
-      );
+        child: const MyApp(),
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -69,11 +66,16 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Alpha X Test App',
+          title: 'AlphaX Test App',
           onGenerateRoute: routes,
           theme: ThemeData(
             useMaterial3: false,
-            pageTransitionsTheme: const PageTransitionsTheme(builders: {TargetPlatform.android: CupertinoPageTransitionsBuilder(), TargetPlatform.iOS: CupertinoPageTransitionsBuilder()}),
+            pageTransitionsTheme: const PageTransitionsTheme(
+              builders: {
+                TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+                TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+              },
+            ),
             textTheme: GoogleFonts.dmSansTextTheme(),
             primaryColor: ConstantColors.primaryGreen,
           ),

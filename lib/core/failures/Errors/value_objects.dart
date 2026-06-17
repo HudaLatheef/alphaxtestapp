@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-
 import 'errors.dart';
 
 @immutable
@@ -18,10 +17,7 @@ abstract class ValueObject<T> {
   }
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
-    return value.fold(
-      (l) => left(l),
-      (r) => right(unit),
-    );
+    return value.fold((l) => left(l), (r) => right(unit));
   }
 
   bool isValid() => value.isRight();
