@@ -1,16 +1,30 @@
 # alphaxtestapp
 
-A new Flutter project.
+## Features
+- Login with validation
+- OTP verification
+- Secure token storage
+- API integration
+- Home & Profile screens
+- Pull to refresh
+- Auto-login on app restart
+- Logout with session clearing
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Architecture
+- Clean Architecture (Data / Domain / Presentation)
+- BLoC for state management
+- Freezed for immutable models & states
 
-A few resources to get you started if this is your first Flutter project:
+## Packages Used
+- flutter_bloc
+- freezed
+- dio/http
+- flutter_secure_storage
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## How to run
+flutter pub get
+flutter run
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Build APK
+flutter build apk --release
